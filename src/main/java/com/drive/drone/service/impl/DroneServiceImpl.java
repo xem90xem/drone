@@ -79,13 +79,14 @@ public class DroneServiceImpl implements DroneService {
                     Urbanization item = new Urbanization();
                     
                     if (origen) {
-                        // cuando sea la primera de la columna recuperamos el
-                        // id de la urbanizacion de la izquierda para enviarlo a
+                        // cuando sea la primera de la FILA recuperamos el
+                        // id de la urbanizacion de ARRIBA para enviarlo a
                         // obtenerAdyacente
                         if (j == 0 && i >= 1) {
-                            idAdy = obtenerAdyacente(urbanization[i - 1][j].getId(), "DERECHA");
+                            idAdy = obtenerAdyacente(urbanization[i - 1][j].getId(), "ABAJO");
                         } else {
-                            idAdy = obtenerAdyacente(urbanization[i][j - 1].getId(), "ABAJO");
+                            // Si no recuperamos la urbanizacion de la izquierda
+                            idAdy = obtenerAdyacente(urbanization[i][j - 1].getId(), "DERECHA");
                         }
                         
                         item.setId(idAdy + String.valueOf(i) + String.valueOf(j));
