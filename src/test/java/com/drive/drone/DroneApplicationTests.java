@@ -19,16 +19,4 @@ public class DroneApplicationTests {
         DroneApplication.main(null);
     }
     
-    /**
-     * Main test.
-     */
-    @Test(expected = IllegalArgumentException.class)
-    public void mainTest(){
-        
-        String[] args = { "1", "2" };
-        DroneApplication.main(args);
-        
-        DroneApplication.main(null);
-    }
-    
 }
